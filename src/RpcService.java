@@ -2,7 +2,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class RpcService{
@@ -12,7 +16,6 @@ public class RpcService{
 		
 		String clientName = JOptionPane.showInputDialog("Digite seu nome: ");
 		
-		putName.write("-------------------------------");
 		putName.write("\n" + "Cliente: " + clientName + "\n");
 		putName.close();
 	}
@@ -41,7 +44,6 @@ public class RpcService{
 		String date = JOptionPane.showInputDialog("Digite a data atual: ");
 		
 		putDate.write("Data: " + date + "\n");
-		putDate.write("-------------------------------");
 		putDate.close();
 	}
 	
@@ -51,11 +53,11 @@ public class RpcService{
 			
 			try {
 				if(texto.contains(clientName)){
-					JOptionPane.showMessageDialog(null, "Dados do cliente: " + "\n" + texto);
+					JOptionPane.showMessageDialog(null, "Dados do cliente: " + "\n" + texto.substring(5));
 				} else {
 					JOptionPane.showMessageDialog(null, "Nada encontrado");
 				}
-			} catch(NullPointerException e){
+			} catch(Exception e){
 				System.out.println("Erro");
 			}
 	}

@@ -1,6 +1,10 @@
--------------------------------
+
 Cliente: Walter
-Valor: 190,45
+Valor: 18,20
 Combustivel: Gasolina
-Data: 14/12/2022
--------------------------------
+Data: 12/12/2022
+
+Cliente: JR
+Valor: 17,90
+Combustivel: Etanol
+Data: 12/12/2022
